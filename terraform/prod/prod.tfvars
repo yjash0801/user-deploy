@@ -1,6 +1,6 @@
 #putting a dummy content
 
-environment = prod
+environment = "prod"
 common_tags = {
     Name = "mechanoidstore"
     Environment = "prod"
