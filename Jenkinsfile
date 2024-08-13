@@ -16,22 +16,28 @@ pipeline {
         booleanParam(name: 'Destroy', defaultValue: 'false', description: 'Destroy to destroy the Infra?')
     }
     stages {
-        stage('DEV Environment')
+        stage('DEV Environment'){
         when{
             expression{
                 params.environment == 'dev'
             }
+        }
             steps{
+                sh """
                 echo "running in dev env"
+                """
             }
         }
-        stage('PROD Environment')
+        stage('PROD Environment'){
         when{
             expression{
                 params.environment == 'prod'
             }
+        }
             steps{
+                sh """
                 echo "running in prod env"
+                """
             }
         }
         stage('Print version') {
